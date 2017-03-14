@@ -11,7 +11,8 @@ text_input = " ".join(sys.argv[1:])
 for char in text_input:
     try:
         char.encode("ascii")
-    except UnicodeDecodeError:
+    # So we're compatible with python 2 and 3
+    except (UnicodeDecodeError, UnicodeEncodeError):
         print("Input text must be ascii")
         exit()
 
