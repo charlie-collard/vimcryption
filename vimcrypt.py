@@ -1,12 +1,19 @@
 import sys
 from random import randint
 
-if len(sys.argv) < 2:
-    print("Usage: python vimcrypt.py <text to liberate>")
+if not sys.stdin.isatty():
+    input_file = sys.stdin
+elif len(sys.argv) < 2:
+    print("Usage: python vimcrypt.py <file to liberate>")
     exit()
+else:
+    try:
+        input_file = open(sys.argv[1])
+    except IOError:
+        print("Couldn't find file: %s" % sys.argv[1])
+        exit()
 
-text_input = " ".join(sys.argv[1:])
-
+text_input = input_file.read()
 #Validate input
 for char in text_input:
     try:
@@ -29,5 +36,6 @@ for char in text_input:
     out_bytes[-1] |= (ord(char) & 0b00111111)
     out_bytes[-2] |= (ord(char) & 0b11000000) >> 6
 
-with open("vimcrypted.txt", "wb") as f:
-    f.write(out_bytes)
+sys.stdout.write(out_bytes)
+sys.stdout.flush()
+sys.stdout.close()
