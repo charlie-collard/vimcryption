@@ -25,6 +25,11 @@ for char in text_input:
 
 out_bytes = bytearray()
 for char in text_input:
+    # Don't vimcrypt linefeeds
+    if ord(char) == 0x0a:
+        out_bytes.append(0x0a)
+        continue
+
     # Give each ascii byte some room to breathe by expanding it to 2-5 bytes randomly
     byte_count = randint(2,6)
     first = int("1"*byte_count + "0"*(8-byte_count), 2)
