@@ -42,3 +42,6 @@ You will notice that once we've decided to use multiple bytes, we only have 6 bi
 
 ## Why?
 Boredom, mostly.
+
+## This isn't real encryption. You suck.
+:(
