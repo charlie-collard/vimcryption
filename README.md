@@ -1,7 +1,7 @@
 # vimcryption
 Liberating ASCII characters from their cramped 1-byte prisons by abusing vim's incorrect UTF-8 decoding.
 
-Simply pass the script some ascii text to balloon it up to, on average, 4x the size! If this isn't enough for you, as an added bonus only other vim users will be able to read it. Bask in the smugness that can only come from using standard-defying software.
+Simply pass the script some ascii text to balloon it up to, on average, 3.5x the size! If this isn't enough for you, as an added bonus only other vim users will be able to read it. Bask in the smugness that can only come from using standard-defying software.
 
 ## How?
 UTF-8 encodes codepoints in the following way (using 🍓 U+1F353 as an example)
@@ -10,9 +10,9 @@ UTF-8 encodes codepoints in the following way (using 🍓 U+1F353 as an example)
 * Otherwise, taking your codepoint as bits, fill in the gaps in the following pattern from the right:
 
 > 10------ 10------ 10------ 10------ 10------
-
-> 0x1F353 == **1 11110011 01010011**
-
+>
+> 0x1F353 == **11111001101010011**
+>
 > 10------ 10------ 10-**11111** 10**001101** 10**010011**
 
 * Delete any unused bytes:
