@@ -4,9 +4,9 @@ Liberating ASCII characters from their cramped 1-byte prisons by abusing vim's i
 Simply pipe the script some ascii text to balloon it up to, on average, 3.5x the size! If this isn't enough for you, as an added bonus only other vim users will be able to read it. Bask in the smugness that can only come from using standard-defying software.
 
 ## Usage
-`(python2 | python3) vimcrypt.py [filename] > outputfile && vim outputfile`
+`(python2 | python3) vimcrypt.py inputfile > outputfile && vim outputfile`
 
-Reads from stdin if no file is given.
+`some-command | (python2 | python3) vimcrypt.py > outputfile && vim outputfile`
 
 ## How?
 UTF-8 encodes codepoints in the following way (using 🍓 U+1F353 as an example)
