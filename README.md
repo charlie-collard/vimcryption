@@ -5,6 +5,7 @@ Simply pipe the script some ascii text to balloon it up to, on average, 3.5x the
 
 ## Usage
 `(python2 | python3) vimcrypt.py [filename] > outputfile && vim outputfile`
+
 Reads from stdin if no file is given.
 
 ## How?
