@@ -4,7 +4,7 @@ Liberating ASCII characters from their cramped 1-byte prisons by abusing vim's i
 Simply pass the script some ascii text to balloon it up to, on average, 4x the size! If this isn't enough for you, as an added bonus only other vim users will be able to read it. Bask in the smugness that can only come from using standard-defying software.
 
 ## How?
-UTF-8 encodes multi-byte codepoints in the following way (using 🍓 U+1F353 as an example)
+UTF-8 encodes codepoints in the following way (using 🍓 U+1F353 as an example)
 
 * If the codepoint is < 128 (ASCII), simply encode it as such.
 * Otherwise, taking your codepoint as bits, fill in the gaps in the following pattern from the right:
