@@ -2,7 +2,7 @@ import sys
 from random import randint
 
 if len(sys.argv) < 2:
-    print("Usage: python vimcrypt.py <text to mangle>")
+    print("Usage: python vimcrypt.py <text to liberate>")
     exit()
 
 text_input = " ".join(sys.argv[1:])
