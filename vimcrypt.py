@@ -14,14 +14,13 @@ else:
         exit()
 
 text_input = input_file.read()
-#Validate input
-for char in text_input:
-    try:
-        char.encode("ascii")
-    # So we're compatible with python 2 and 3
-    except (UnicodeDecodeError, UnicodeEncodeError):
-        print("Input text must be ascii")
-        exit()
+# Validate input
+try:
+    text_input.encode("ascii")
+# So we're compatible with python 2 and 3
+except (UnicodeDecodeError, UnicodeEncodeError):
+    print("Input text must be ascii")
+    exit()
 
 out_bytes = bytearray()
 for char in text_input:
